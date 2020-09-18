@@ -1,0 +1,67 @@
+<div class="right">
+
+  <h1 class="heading heading-for-tables">Data from public API (FOR NOW HARDCODED)</h1>
+  <table class="table-information">
+    <thead>
+      <tr>
+        <th>Data1</th>
+        <th>Data2</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td>Full name:</td>
+        <td>Bruce Wayne</td>
+      </tr>
+      <tr>
+        <td>Place of birth:</td>
+        <td>Gotham County</td>
+      </tr>
+    <tr>
+      <td>Gender:</td>
+      <td>Male</td>
+    </tr>
+    </tbody>
+  </table>
+
+
+  <h1 class="heading heading-for-tables">Data from Spring Boot API</h1>
+
+  <div *ngFor="let tempHero of heroes">
+
+    <div class="film-information-box">
+      <table class="table-information">
+        <thead>
+        <tr>
+          <th>Data1</th>
+          <th>Data2</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>Film name:</td>
+          <td>{{ tempHero.filmName }}</td>
+        </tr>
+        <tr>
+          <td>Actor name:</td>
+          <td>{{ tempHero.actorName }}</td>
+        </tr>
+        <tr>
+          <td>CSFD Rating:</td>
+          <td>{{ tempHero.csfdRating }}</td>
+        </tr>
+        <tr>
+          <td>
+            <a class="seventh before after" href="{{ tempHero.csfdUrl }}" target="_blank">Link to CSFD</a>
+          </td>
+          <td></td>
+        </tr>
+
+        </tbody>
+      </table>
+  </div>
+
+
+    </div>
+</div>

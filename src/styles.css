@@ -1,1 +1,246 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+  url(/assets/images/marvel-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  height: 100%;
+  font-family: "Lato", "Aril", sans-serif;
+
+  /* Disable select any text */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+h1 {
+  color: #ddd;
+  /*text-transform: uppercase;*/
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  margin: 0 0 25px 0;
+  font-size: 16px;
+}
+
+.heading {
+  font-size: 40px;
+  text-align: center;
+  padding-top: 40px;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(187, 187, 228), 0 0 5px rgb(1, 178, 248);
+}
+
+.heading-for-tables {
+  text-align: left;
+}
+
+#wrapper {
+  display: flex;
+
+}
+
+#box-left-right {
+   /*background: blue;*/
+  /* border : 2px solid #000;  */
+  /* overflow:hidden; */
+  box-sizing: border-box;
+  width: max-content;
+}
+
+#left {
+   /*background-color: gray;*/
+  float: left;
+  margin: 10px 0 0 20px;
+  width: 360px;
+  border-right: 2px solid #000;
+  border-radius: 5%;
+  box-shadow: 0 0 20px 5px black;
+}
+
+#inside-left {
+  margin-left: 10px
+}
+
+#right {
+  color: #fff;
+  /*float:right;*/
+  overflow:hidden;
+  /*margin: 0 0 100px 100px;*/
+  margin-left: 100px;
+  padding-left: 50px;
+  min-height:170px;
+  width: max-content;
+  /*background: red;*/
+}
+
+.table-information {
+  font-size: 30px;
+  text-align: left;
+  color: white;
+  margin: 10px 15px 15px 15px;
+  /* overflow: visible; */
+  /* border-collapse: separate; */
+
+  border-right:2px solid #000;
+  /* border-radius: 15%; */
+  border-radius: 20px;
+  overflow:hidden;
+  box-shadow: 0 0 20px 5px black;
+}
+
+.table-information th {
+  padding: 20px 20px;
+}
+
+.table-information thead  {
+  border-radius: 20px;
+  background: linear-gradient(90deg, #4e4b4b 0%, #28494e 51%, #04263d 75%);
+  /* background: gray; */
+}
+
+.table-information td {
+  padding: 10px;
+}
+
+.film-information-box {
+  margin: 40px 0 0 0;
+}
+
+/*
+STYLING HREF
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+.wrapper{
+  font-family:'Open Sans', sans-serif;
+  margin:3em 0;
+}
+a,a:visited,a:hover,a:active{
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  position:relative;
+  transition:0.5s color ease;
+  text-decoration:none;
+  color:#81b3d2;
+  font-size:2.0em;
+}
+a:hover{
+  color:#d73444;
+}
+a.before:before,a.after:after{
+  content: "";
+  transition:0.5s all ease;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  position:absolute;
+}
+a.before:before{
+  top:-0.25em;
+}
+a.after:after{
+  bottom:-0.25em;
+}
+a.before:before,a.after:after{
+  height:5px;
+  height:0.35rem;
+  width:0;
+  background:#d73444;
+}
+a.first:after{
+  left:0;
+}
+a.second:after{
+  right:0;
+}
+a.third:after,a.sixth:before,a.sixth:after{
+  left:50%;
+  -webkit-transform:translateX(-50%);
+  transform:translateX(-50%);
+}
+a.fourth:before,a.fourth:after{
+  left:0;
+}
+a.fifth:before,a.fifth:after{
+  right:0;
+}
+a.seventh:before{
+  right:0;
+}
+a.seventh:after{
+  left:0;
+}
+a.eighth:before{
+  left:0;
+}
+a.eighth:after{
+  right:0;
+}
+a.before:hover:before,a.after:hover:after{
+  width:100%;
+}
+.square{
+  box-sizing:border-box;
+  margin-left:-0.4em;
+  position:relative;
+  font-size:2.5em;
+  overflow:hidden;
+}
+.square a{
+  position:static;
+  font-size:100%;
+  padding:0.2em 0.4em;
+}
+.square:before,.square:after{
+  content: "";
+  box-sizing:border-box;
+  transition:0.25s all ease;
+  -webkit-backface-visibility:hidden;
+  backface-visibility:hidden;
+  position:absolute;
+  width:5px;
+  width:0.35rem;
+  height:0;
+  background:#d73444;
+}
+.square:before{
+  left:0;
+  bottom:-0.2em;
+}
+.square.individual:before{
+  transition-delay:0.6s;
+}
+.square:after{
+  right:0;
+  top:-0.2em;
+}
+.square.individual:after{
+  transition-delay:0.2s;
+}
+.square a:before{
+  left:0;
+  transition:0.25s all ease;
+}
+.square a:after{
+  right:0;
+  transition:0.25s all ease;
+}
+.square.individual a:after{
+  transition:0.25s all ease 0.4s;
+}
+.square:hover:before,.square:hover:after{
+  height:calc(100% + 0.4em);
+}
+.square:hover a:before,.square:hover a:after{
+  width:100%;
+}
+
+

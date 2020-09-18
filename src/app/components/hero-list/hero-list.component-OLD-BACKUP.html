@@ -1,0 +1,28 @@
+<table class="table">
+
+    <thead class="thead-dark">
+        <tr>
+            <th>Actor Name</th>
+            <th>CSFD Rating</th>
+            <th>CSFD URL</th>
+            <th>Film name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let tempHero of heroes">
+            <td class="align-middle">{{ tempHero.actorName }}</td>
+            <td class="align-middle">{{ tempHero.csfdRating }}</td>
+            <td class="align-middle"> 
+                <a href="{{ tempHero.csfdUrl }}" target="_blank">Link to CSFD</a>
+            </td>
+            <td class="align-middle">{{ tempHero.filmName }}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+<!-- <p *ngFor="let tempHero of heroes">
+
+    {{ tempHero.actorName }} : {{ tempHero.csfdRating }} : {{ tempHero.csfdUrl }} : {{ tempHero.filmName }}
+</p> -->

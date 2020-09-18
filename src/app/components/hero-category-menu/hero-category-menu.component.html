@@ -1,0 +1,10 @@
+  <div id="inside-left">
+    <div class="wrapper" *ngFor="let tempHeroCategory of heroCategories">
+        <a class="third after"
+           routerLink="/category/{{ tempHeroCategory.id }}"
+           routerLinkActive="active-link">{{ tempHeroCategory.heroName }}</a>
+    </div>
+  </div>
+
+
+
