@@ -1,6 +1,11 @@
 <div class="right">
 
-  <h1 class="heading heading-for-tables">Data from public API (FOR NOW HARDCODED)</h1>
+  <h1 class="heading heading-for-tables">Selected Hero:
+    <span class="heading-colored">{{ currentHeroName }}</span>
+  </h1>
+  <hr>
+
+  <h1 class="heading heading-for-tables">Hero Personal Data (Data from public API - for now hardcoded):</h1>
   <table class="table-information">
     <thead>
       <tr>
@@ -16,7 +21,7 @@
       </tr>
       <tr>
         <td>Place of birth:</td>
-        <td>Gotham County</td>
+        <td>Gotham County</td>k
       </tr>
     <tr>
       <td>Gender:</td>
@@ -26,7 +31,7 @@
   </table>
 
 
-  <h1 class="heading heading-for-tables">Data from Spring Boot API</h1>
+  <h1 class="heading heading-for-tables">Appearance in films (data from Spring Boot API):</h1>
 
   <div *ngFor="let tempHero of heroes">
 
@@ -49,11 +54,11 @@
         </tr>
         <tr>
           <td>CSFD Rating:</td>
-          <td>{{ tempHero.csfdRating }}</td>
+          <td>{{ tempHero.csfdRating }}%</td>
         </tr>
         <tr>
-          <td>
-            <a class="seventh before after" href="{{ tempHero.csfdUrl }}" target="_blank">Link to CSFD</a>
+          <td class="link-in-table">
+            <a href="{{ tempHero.csfdUrl }}" target="_blank">Link to CSFD</a>
           </td>
           <td></td>
         </tr>

@@ -9,7 +9,7 @@ import { HeroService } from './services/hero.service';
 import { Routes, RouterModule } from '@angular/router';
 import { HeroCategoryMenuComponent } from './components/hero-category-menu/hero-category-menu.component';
 const routes: Routes = [
-  {path: 'category/:id', component: HeroListComponent},
+  {path: 'category/:id/:name', component: HeroListComponent},
   {path: 'category', component: HeroListComponent},
   {path: 'heroes', component: HeroListComponent},
   {path: '', redirectTo: '/heroes', pathMatch: 'full'},

@@ -12,7 +12,7 @@ export class HeroListComponent implements OnInit {
 
   heroes: Hero[];
   currentCategoryId: number;
-
+  currentHeroName: string;
 
   constructor(private heroService: HeroService,
               private route: ActivatedRoute) { }
@@ -29,8 +29,10 @@ export class HeroListComponent implements OnInit {
 
     if (hasCategoryId) {
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
+      this.currentHeroName = this.route.snapshot.paramMap.get('name');
     } else {
       this.currentCategoryId = 1;
+      this.currentHeroName = 'Batman';
     }
 
     this.heroService.getHeroList(this.currentCategoryId).subscribe(
