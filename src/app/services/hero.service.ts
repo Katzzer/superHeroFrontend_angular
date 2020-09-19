@@ -35,9 +35,8 @@ export class HeroService {
   );
   }
 
-  getHeroPersonalDataFromPublicAPI(): Observable<HeroPersonalData[]> {
-    // TODO: FIX URL - make it dynamic
-    const searchUrlForPersonalData = `${this.baseUrlForPublicAPI}batman`;
+  getHeroPersonalDataFromPublicAPI(currentHeroName: string): Observable<HeroPersonalData[]> {
+    const searchUrlForPersonalData = `${this.baseUrlForPublicAPI}${currentHeroName}`;
 
     return this.httpClient.get<GetResponseHeroPersonalData>(searchUrlForPersonalData).pipe(
       map(response => response.results)

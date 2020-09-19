@@ -23,11 +23,6 @@ export class HeroListComponent implements OnInit {
     this.route.paramMap.subscribe(() => {
       this.listHeroes();
     });
-
-    // TODO: Implement route...
-    // TODO: Fix name
-    this.heroPersonalDataGetter();
-
   }
 
   listHeroes(): void {
@@ -47,10 +42,7 @@ export class HeroListComponent implements OnInit {
         this.heroes = data;
       }
     );
-  }
-
-  heroPersonalDataGetter(): void {
-    this.heroService.getHeroPersonalDataFromPublicAPI().subscribe(
+    this.heroService.getHeroPersonalDataFromPublicAPI(this.currentHeroName).subscribe(
       data => {
         this.heroPersonalData = data;
       }

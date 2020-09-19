@@ -5,7 +5,7 @@
   </h1>
   <hr>
 
-  <h1 class="heading heading-for-tables">Hero Personal Data (Data from public API - works only for Batman):</h1>
+  <h1 class="heading heading-for-tables">Hero Personal Data (Data from public API):</h1>
   <div *ngFor="let tempHeroPersonalData of heroPersonalData">
     <table class="table-information">
       <thead>
@@ -16,6 +16,10 @@
       </thead>
 
       <tbody>
+      <tr>
+        <td>Super Hero ID:</td>
+        <td>{{ tempHeroPersonalData.id }}</td>
+      </tr>
       <tr>
         <td>Full name:</td>
         <td>{{ tempHeroPersonalData.biography["full-name"] }}</td>

@@ -6,7 +6,4 @@ export class HeroPersonalData {
     'place-of-birth': string;
     alignment: string;
   };
-  // 'full-name': string;
-  // 'place-of-birth': string;
-  // publisher: string;
 }
