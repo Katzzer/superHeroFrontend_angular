@@ -6,4 +6,11 @@ export class HeroPersonalData {
     'place-of-birth': string;
     alignment: string;
   };
+  appearance: {
+    gender: string;
+    weight: string[];
+  };
+  connections: {
+    'group-affiliation': string;
+  };
 }

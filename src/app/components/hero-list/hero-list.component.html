@@ -10,27 +10,27 @@
     <table class="table-information">
       <thead>
       <tr>
-        <th>Data1</th>
-        <th>Data2</th>
+        <th>Full name:</th>
+        <th>{{ tempHeroPersonalData.biography["full-name"] }}</th>
       </tr>
       </thead>
 
       <tbody>
       <tr>
-        <td>Super Hero ID:</td>
-        <td>{{ tempHeroPersonalData.id }}</td>
-      </tr>
-      <tr>
-        <td>Full name:</td>
-        <td>{{ tempHeroPersonalData.biography["full-name"] }}</td>
-      </tr>
-      <tr>
         <td>Place of birth:</td>
         <td>{{ tempHeroPersonalData.biography["place-of-birth"] }}</td>
       </tr>
       <tr>
+        <td>Weight:</td>
+        <td>{{ tempHeroPersonalData.appearance.weight[1] }}</td>
+      </tr>
+      <tr>
         <td>Alignment:</td>
         <td>{{ tempHeroPersonalData.biography.alignment }}</td>
+      </tr>
+      <tr>
+        <td>Super Hero ID:</td>
+        <td>{{ tempHeroPersonalData.id }}</td>
       </tr>
       </tbody>
     </table>
@@ -44,15 +44,11 @@
       <table class="table-information">
         <thead>
         <tr>
-          <th>Data1</th>
-          <th>Data2</th>
+          <th>Film name:</th>
+          <th>{{ tempHero.filmName }}</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td>Film name:</td>
-          <td>{{ tempHero.filmName }}</td>
-        </tr>
         <tr>
           <td>Actor name:</td>
           <td>{{ tempHero.actorName }}</td>
