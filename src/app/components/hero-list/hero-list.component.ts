@@ -15,6 +15,7 @@ export class HeroListComponent implements OnInit {
   heroPersonalData: HeroPersonalData[];
   currentCategoryId: number;
   currentHeroName: string;
+  isHero: boolean;
 
   constructor(private heroService: HeroService,
               private route: ActivatedRoute) { }
@@ -45,7 +46,12 @@ export class HeroListComponent implements OnInit {
     this.heroService.getHeroPersonalDataFromPublicAPI(this.currentHeroName).subscribe(
       data => {
         this.heroPersonalData = data;
+        this.isHeroTest();
       }
     );
+  }
+
+  isHeroTest(): void {
+    this.isHero = typeof this.heroPersonalData !== 'undefined' && this.heroPersonalData[0].biography.alignment === 'good';
   }
 }

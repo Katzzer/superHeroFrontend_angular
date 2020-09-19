@@ -1,11 +1,15 @@
 <div class="right">
 
-  <h1 class="heading heading-for-tables">Selected Hero:
+  <h1 *ngIf="isHero" class="heading heading-for-tables">Selected Hero:
+    <span class="heading-colored">{{ currentHeroName }}</span>
+  </h1>
+  <h1 *ngIf="!isHero" class="heading heading-for-tables">Selected Valiant:
     <span class="heading-colored">{{ currentHeroName }}</span>
   </h1>
   <hr>
 
-  <h1 class="heading heading-for-tables">Hero Personal Data (data from public API):</h1>
+  <h1 *ngIf="isHero" class="heading heading-for-tables">Hero Personal Data (data from public API):</h1>
+  <h1 *ngIf="!isHero" class="heading heading-for-tables">Valiant Personal Data (data from public API):</h1>
   <div *ngFor="let tempHeroPersonalData of heroPersonalData">
     <div class="information-box">
       <table class="table-information">
