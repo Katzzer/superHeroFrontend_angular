@@ -4,6 +4,7 @@ import { Hero } from '../common/hero';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {HeroCategory} from '../common/hero-category';
+import {HeroPersonalData} from '../common/hero-personal-data';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,8 @@ export class HeroService {
   private baseUrl = 'http://localhost:8080/api/hero-information';
 
   private categoryUrl = 'http://localhost:8080/api/hero-name-list';
+
+  private baseUrlForPublicAPI = 'https://superheroapi.com/api/10224137576688592/search/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -27,15 +30,20 @@ export class HeroService {
 
   getHeroCategories(): Observable<HeroCategory[]> {
 
-    const data = this.httpClient.get<GetResponseHeroCategory>(this.categoryUrl).pipe(
-      map(response => response._embedded.heroName));
-
-    console.log('DATA: ' + JSON.stringify(data));
-
     return this.httpClient.get<GetResponseHeroCategory>(this.categoryUrl).pipe(
       map(response => response._embedded.heroName)
   );
   }
+
+  getHeroPersonalDataFromPublicAPI(): Observable<HeroPersonalData[]> {
+    // TODO: FIX URL - make it dynamic
+    const searchUrlForPersonalData = `${this.baseUrlForPublicAPI}batman`;
+
+    return this.httpClient.get<GetResponseHeroPersonalData>(searchUrlForPersonalData).pipe(
+      map(response => response.results)
+    );
+  }
+
 }
 
 interface GetResponseHeroes {
@@ -48,5 +56,9 @@ interface GetResponseHeroCategory {
   _embedded: {
     heroName: HeroCategory[];
   };
+}
+
+interface GetResponseHeroPersonalData {
+  results: HeroPersonalData[];
 }
 

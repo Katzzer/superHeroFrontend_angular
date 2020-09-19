@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
 import { Hero } from 'src/app/common/hero';
 import {ActivatedRoute} from '@angular/router';
+import {HeroPersonalData} from '../../common/hero-personal-data';
 
 @Component({
   selector: 'app-hero-list',
@@ -11,6 +12,7 @@ import {ActivatedRoute} from '@angular/router';
 export class HeroListComponent implements OnInit {
 
   heroes: Hero[];
+  heroPersonalData: HeroPersonalData[];
   currentCategoryId: number;
   currentHeroName: string;
 
@@ -21,9 +23,14 @@ export class HeroListComponent implements OnInit {
     this.route.paramMap.subscribe(() => {
       this.listHeroes();
     });
+
+    // TODO: Implement route...
+    // TODO: Fix name
+    this.heroPersonalDataGetter();
+
   }
 
-  listHeroes() {
+  listHeroes(): void {
 
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
@@ -38,6 +45,14 @@ export class HeroListComponent implements OnInit {
     this.heroService.getHeroList(this.currentCategoryId).subscribe(
       data => {
         this.heroes = data;
+      }
+    );
+  }
+
+  heroPersonalDataGetter(): void {
+    this.heroService.getHeroPersonalDataFromPublicAPI().subscribe(
+      data => {
+        this.heroPersonalData = data;
       }
     );
   }

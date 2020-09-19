@@ -5,31 +5,32 @@
   </h1>
   <hr>
 
-  <h1 class="heading heading-for-tables">Hero Personal Data (Data from public API - for now hardcoded):</h1>
-  <table class="table-information">
-    <thead>
+  <h1 class="heading heading-for-tables">Hero Personal Data (Data from public API - works only for Batman):</h1>
+  <div *ngFor="let tempHeroPersonalData of heroPersonalData">
+    <table class="table-information">
+      <thead>
       <tr>
         <th>Data1</th>
         <th>Data2</th>
       </tr>
-    </thead>
+      </thead>
 
-    <tbody>
+      <tbody>
       <tr>
         <td>Full name:</td>
-        <td>Bruce Wayne</td>
+        <td>{{ tempHeroPersonalData.biography["full-name"] }}</td>
       </tr>
       <tr>
         <td>Place of birth:</td>
-        <td>Gotham County</td>
+        <td>{{ tempHeroPersonalData.biography["place-of-birth"] }}</td>
       </tr>
-    <tr>
-      <td>Gender:</td>
-      <td>Male</td>
-    </tr>
-    </tbody>
-  </table>
-
+      <tr>
+        <td>Alignment:</td>
+        <td>{{ tempHeroPersonalData.biography.alignment }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
 
   <h1 class="heading heading-for-tables">Appearance in films (data from Spring Boot API):</h1>
 
