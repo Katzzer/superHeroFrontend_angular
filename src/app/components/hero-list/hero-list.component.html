@@ -5,42 +5,44 @@
   </h1>
   <hr>
 
-  <h1 class="heading heading-for-tables">Hero Personal Data (Data from public API):</h1>
+  <h1 class="heading heading-for-tables">Hero Personal Data (data from public API):</h1>
   <div *ngFor="let tempHeroPersonalData of heroPersonalData">
-    <table class="table-information">
-      <thead>
-      <tr>
-        <th>Full name:</th>
-        <th>{{ tempHeroPersonalData.biography["full-name"] }}</th>
-      </tr>
-      </thead>
+    <div class="information-box">
+      <table class="table-information">
+        <thead>
+        <tr>
+          <th>Full name:</th>
+          <th>{{ tempHeroPersonalData.biography["full-name"] }}</th>
+        </tr>
+        </thead>
 
-      <tbody>
-      <tr>
-        <td>Place of birth:</td>
-        <td>{{ tempHeroPersonalData.biography["place-of-birth"] }}</td>
-      </tr>
-      <tr>
-        <td>Weight:</td>
-        <td>{{ tempHeroPersonalData.appearance.weight[1] }}</td>
-      </tr>
-      <tr>
-        <td>Alignment:</td>
-        <td>{{ tempHeroPersonalData.biography.alignment }}</td>
-      </tr>
-      <tr>
-        <td>Super Hero ID:</td>
-        <td>{{ tempHeroPersonalData.id }}</td>
-      </tr>
-      </tbody>
-    </table>
+        <tbody>
+        <tr>
+          <td>Place of birth:</td>
+          <td>{{ tempHeroPersonalData.biography["place-of-birth"] }}</td>
+        </tr>
+        <tr>
+          <td>Weight:</td>
+          <td>{{ tempHeroPersonalData.appearance.weight[1] }}</td>
+        </tr>
+        <tr>
+          <td>Alignment:</td>
+          <td>{{ tempHeroPersonalData.biography.alignment }}</td>
+        </tr>
+        <tr>
+          <td>Super Hero ID:</td>
+          <td>{{ tempHeroPersonalData.id }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <h1 class="heading heading-for-tables">Appearance in films (data from Spring Boot API):</h1>
 
   <div *ngFor="let tempHero of heroes">
 
-    <div class="film-information-box">
+    <div class="information-box">
       <table class="table-information">
         <thead>
         <tr>
