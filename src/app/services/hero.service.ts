@@ -15,7 +15,8 @@ export class HeroService {
 
   private categoryUrl = 'http://localhost:8080/api/hero-name-list';
 
-  private baseUrlForPublicAPI = 'https://superheroapi.com/api/10224137576688592/search/';
+  // private baseUrlForPublicAPI = 'https://superheroapi.com/api/10224137576688592/search/';
+  private baseUrlForPublicAPI = 'http://localhost:8080/api/superheroapi?hero=';
 
   constructor(private httpClient: HttpClient) { }
 
