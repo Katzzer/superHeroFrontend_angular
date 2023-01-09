@@ -11,17 +11,19 @@ import {HeroPersonalData} from '../common/hero-personal-data';
 })
 export class HeroService {
 
-  private baseUrl = 'http://localhost:8080/api/hero-information';
+  // private baseUrl = 'http://localhost:8080/api/';
+  private baseUrl = 'https://pavelkostal-superheroapi-be.herokuapp.com/api/';
 
-  private categoryUrl = 'http://localhost:8080/api/hero-name-list';
+  private heroInformationUrl = this.baseUrl + 'hero-information';
 
-  // private baseUrlForPublicAPI = 'https://superheroapi.com/api/10224137576688592/search/';
-  private baseUrlForPublicAPI = 'http://localhost:8080/api/superheroapi?hero=';
+  private categoryUrl = this.baseUrl + 'hero-name-list';
+
+  private baseUrlForPublicAPI = this.baseUrl + 'superheroapi?hero=';
 
   constructor(private httpClient: HttpClient) { }
 
   getHeroList(theCategoryId: number): Observable<Hero[]> {
-    const searchUrl = `${this.baseUrl}/search/findByHeroNameId?id=${theCategoryId}`;
+    const searchUrl = `${this.heroInformationUrl}/search/findByHeroNameId?id=${theCategoryId}`;
 
 
     return this.httpClient.get<GetResponseHeroes>(searchUrl).pipe(

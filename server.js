@@ -9,7 +9,7 @@ app.use(express.static(__dirname + '/dist/super-hero-frontend'));
 
 app.get('/*', function(req,res) {
 
-  res.sendFile(path.join(__dirname+'/dist/super-hero-frontend/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/super-hero-frontend_angular/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
