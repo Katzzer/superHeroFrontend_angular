@@ -16,26 +16,26 @@
         <thead>
         <tr>
           <th>Full name:</th>
-          <th>{{ tempHeroPersonalData.biography["full-name"] }}</th>
+          <th>{{ tempHeroPersonalData!.biography["full-name"] }}</th>
         </tr>
         </thead>
 
         <tbody>
         <tr>
           <td>Place of birth:</td>
-          <td>{{ tempHeroPersonalData.biography["place-of-birth"] }}</td>
+          <td>{{ tempHeroPersonalData!.biography["place-of-birth"] }}</td>
         </tr>
         <tr>
           <td>Weight:</td>
-          <td>{{ tempHeroPersonalData.appearance.weight[1] }}</td>
+          <td>{{ tempHeroPersonalData!.appearance!.weight[1] }}</td>
         </tr>
         <tr>
           <td>Alignment:</td>
-          <td>{{ tempHeroPersonalData.biography.alignment }}</td>
+          <td>{{ tempHeroPersonalData!.biography!.alignment }}</td>
         </tr>
         <tr>
           <td>Super Hero ID:</td>
-          <td>{{ tempHeroPersonalData.id }}</td>
+          <td>{{ tempHeroPersonalData!.id }}</td>
         </tr>
         </tbody>
       </table>

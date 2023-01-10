@@ -13,8 +13,8 @@ export class HeroListComponent implements OnInit {
 
   heroes: Hero[] | undefined;
   heroPersonalData: HeroPersonalData[] | undefined;
-  currentCategoryId: number | undefined;
-  currentHeroName: string | null | undefined;
+  currentCategoryId: number = 1;
+  currentHeroName: string | null = "";
   isHero: boolean = true;
 
   constructor(private heroService: HeroService,
@@ -53,6 +53,6 @@ export class HeroListComponent implements OnInit {
   }
 
   isHeroTest(): void {
-    this.isHero = typeof this.heroPersonalData !== 'undefined' && this.heroPersonalData[0].biography.alignment === 'good';
+    this.isHero = typeof this.heroPersonalData !== 'undefined' && this.heroPersonalData[0].biography!!.alignment === 'good';
   }
 }
