@@ -9,7 +9,7 @@ import {HeroService} from '../../services/hero.service';
 })
 export class HeroCategoryMenuComponent implements OnInit {
 
-  heroCategories: HeroCategory[];
+  heroCategories: HeroCategory[] | undefined;
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {

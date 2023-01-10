@@ -11,11 +11,11 @@ import {HeroPersonalData} from '../../common/hero-personal-data';
 })
 export class HeroListComponent implements OnInit {
 
-  heroes: Hero[];
-  heroPersonalData: HeroPersonalData[];
-  currentCategoryId: number;
-  currentHeroName: string;
-  isHero: boolean;
+  heroes: Hero[] | undefined;
+  heroPersonalData: HeroPersonalData[] | undefined;
+  currentCategoryId: number | undefined;
+  currentHeroName: string | null | undefined;
+  isHero: boolean = true;
 
   constructor(private heroService: HeroService,
               private route: ActivatedRoute) { }
@@ -31,6 +31,7 @@ export class HeroListComponent implements OnInit {
     const hasCategoryId: boolean = this.route.snapshot.paramMap.has('id');
 
     if (hasCategoryId) {
+      // @ts-ignore
       this.currentCategoryId = +this.route.snapshot.paramMap.get('id');
       this.currentHeroName = this.route.snapshot.paramMap.get('name');
     } else {
@@ -43,7 +44,7 @@ export class HeroListComponent implements OnInit {
         this.heroes = data;
       }
     );
-    this.heroService.getHeroPersonalDataFromPublicAPI(this.currentHeroName).subscribe(
+    this.heroService.getHeroPersonalDataFromPublicAPI(this.currentHeroName!!).subscribe(
       data => {
         this.heroPersonalData = data;
         this.isHeroTest();
