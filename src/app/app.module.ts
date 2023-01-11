@@ -8,6 +8,7 @@ import { HeroService } from './services/hero.service';
 
 import { Routes, RouterModule } from '@angular/router';
 import { HeroCategoryMenuComponent } from './components/hero-category-menu/hero-category-menu.component';
+import { SpinningCircleComponent } from './spinning-circle/spinning-circle.component';
 const routes: Routes = [
   {path: 'category/:id/:name', component: HeroListComponent},
   {path: 'category', component: HeroListComponent},
@@ -20,7 +21,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HeroListComponent,
-    HeroCategoryMenuComponent
+    HeroCategoryMenuComponent,
+    SpinningCircleComponent
   ],
   imports: [
     RouterModule.forRoot(routes),

@@ -2,8 +2,8 @@ export interface HeroPersonalData {
   id: string;
   name: string;
   biography: {
-    'full-name': string;
-    'place-of-birth': string;
+    fullName: string;
+    placeOfBirth: string;
     alignment: string;
   };
   appearance: {
@@ -11,6 +11,6 @@ export interface HeroPersonalData {
     weight: string[];
   } | undefined;
   connections: {
-    'group-affiliation': string;
+    groupAffiliation: string;
   };
 }

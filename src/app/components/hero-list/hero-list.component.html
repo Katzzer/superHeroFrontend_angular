@@ -6,24 +6,25 @@
   <h1 *ngIf="!isHero" class="heading heading-for-tables">Selected Valiant:
     <span class="heading-colored">{{ currentHeroName }}</span>
   </h1>
-  <hr>
 
   <h1 *ngIf="isHero" class="heading heading-for-tables">Hero Personal Data (data from public API):</h1>
   <h1 *ngIf="!isHero" class="heading heading-for-tables">Valiant Personal Data (data from public API):</h1>
+  <div *ngIf="!heroPersonalData">Loading data...</div>
+  <div *ngIf="!heroPersonalData"><app-spinning-circle></app-spinning-circle></div>
   <div *ngFor="let tempHeroPersonalData of heroPersonalData">
     <div class="information-box">
       <table class="table-information">
         <thead>
         <tr>
           <th>Full name:</th>
-          <th>{{ tempHeroPersonalData!.biography["full-name"] }}</th>
+          <th>{{ tempHeroPersonalData!.biography.fullName }}</th>
         </tr>
         </thead>
 
         <tbody>
         <tr>
           <td>Place of birth:</td>
-          <td>{{ tempHeroPersonalData!.biography["place-of-birth"] }}</td>
+          <td>{{ tempHeroPersonalData!.biography.placeOfBirth }}</td>
         </tr>
         <tr>
           <td>Weight:</td>
@@ -43,6 +44,9 @@
   </div>
 
   <h1 class="heading heading-for-tables">Appearance in films (data from Spring Boot API):</h1>
+
+  <div *ngIf="!heroes">Loading data...</div>
+  <div *ngIf="!heroes"><app-spinning-circle></app-spinning-circle></div>
 
   <div *ngFor="let tempHero of heroes">
 

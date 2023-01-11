@@ -1,4 +1,6 @@
   <div id="inside-left">
+    <div *ngIf="!heroCategories">Loading data...</div>
+    <div *ngIf="!heroCategories"><app-spinning-circle></app-spinning-circle></div>
     <div class="wrapper" *ngFor="let tempHeroCategory of heroCategories">
         <a class="third after"
            routerLink="/category/{{ tempHeroCategory.id }}/{{ tempHeroCategory.heroName }}"
