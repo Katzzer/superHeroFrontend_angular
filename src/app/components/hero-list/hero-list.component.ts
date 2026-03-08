@@ -5,9 +5,10 @@ import {ActivatedRoute} from '@angular/router';
 import {HeroPersonalData} from '../../common/hero-personal-data';
 
 @Component({
-  selector: 'app-hero-list',
-  templateUrl: './hero-list.component.html',
-  styleUrls: ['./hero-list.component.scss']
+    selector: 'app-hero-list',
+    templateUrl: './hero-list.component.html',
+    styleUrls: ['./hero-list.component.scss'],
+    standalone: false
 })
 export class HeroListComponent implements OnInit {
 

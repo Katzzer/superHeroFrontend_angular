@@ -3,9 +3,10 @@ import {HeroCategory} from '../../common/hero-category';
 import {HeroService} from '../../services/hero.service';
 
 @Component({
-  selector: 'app-hero-category-menu',
-  templateUrl: './hero-category-menu.component.html',
-  styleUrls: ['./hero-category-menu.component.scss', 'hero-category-menu-link-style.component.scss']
+    selector: 'app-hero-category-menu',
+    templateUrl: './hero-category-menu.component.html',
+    styleUrls: ['./hero-category-menu.component.scss', 'hero-category-menu-link-style.component.scss'],
+    standalone: false
 })
 export class HeroCategoryMenuComponent implements OnInit {
 

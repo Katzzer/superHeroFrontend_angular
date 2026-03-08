@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HeroService } from './services/hero.service';
 
 import { Routes, RouterModule } from '@angular/router';
@@ -17,19 +17,12 @@ const routes: Routes = [
   {path: '**', redirectTo: '/heroes', pathMatch: 'full'},
 ];
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HeroListComponent,
-    HeroCategoryMenuComponent,
-    SpinningCircleComponent
-  ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    HttpClientModule
-  ],
-  providers: [HeroService],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HeroListComponent,
+        HeroCategoryMenuComponent,
+        SpinningCircleComponent
+    ],
+    bootstrap: [AppComponent], imports: [RouterModule.forRoot(routes),
+        BrowserModule], providers: [HeroService, provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }

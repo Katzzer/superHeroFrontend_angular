@@ -1,12 +1,18 @@
-  <div id="inside-left">
-    <div *ngIf="!heroCategories">Loading data...</div>
-    <div *ngIf="!heroCategories"><app-spinning-circle></app-spinning-circle></div>
-    <div class="wrapper" *ngFor="let tempHeroCategory of heroCategories">
-        <a class="third after"
-           routerLink="/category/{{ tempHeroCategory.id }}/{{ tempHeroCategory.heroName }}"
-           routerLinkActive="active-link">{{ tempHeroCategory.heroName }}</a>
+<div id="inside-left">
+  @if (!heroCategories) {
+    <div>Loading data...</div>
+  }
+  @if (!heroCategories) {
+    <div><app-spinning-circle></app-spinning-circle></div>
+  }
+  @for (tempHeroCategory of heroCategories; track tempHeroCategory) {
+    <div class="wrapper">
+      <a class="third after"
+        routerLink="/category/{{ tempHeroCategory.id }}/{{ tempHeroCategory.heroName }}"
+      routerLinkActive="active-link">{{ tempHeroCategory.heroName }}</a>
     </div>
-  </div>
+  }
+</div>
 
 
 

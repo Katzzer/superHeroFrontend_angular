@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-spinning-circle',
-  templateUrl: './spinning-circle.component.html',
-  styleUrls: ['./spinning-circle.component.scss']
+    selector: 'app-spinning-circle',
+    templateUrl: './spinning-circle.component.html',
+    styleUrls: ['./spinning-circle.component.scss'],
+    standalone: false
 })
 export class SpinningCircleComponent implements OnInit {
 
