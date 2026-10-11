@@ -12,7 +12,7 @@ import {HeroPersonalData} from '../common/hero-personal-data';
 export class HeroService {
 
   // private baseUrl = 'http://localhost:8080/api/';
-  private baseUrl = 'https://pavelkostal-superheroapi-be.herokuapp.com/api/';
+  private baseUrl = 'https://superhero-api-backend-5f9246c88ca1.herokuapp.com/api/';
 
   private heroInformationUrl = this.baseUrl + 'hero-information';
 
